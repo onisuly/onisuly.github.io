@@ -31,4 +31,6 @@ $(function() {
     });
 
     $(".post-body img").addClass("img-thumbnail img-responsive");
+    $(".post-body-inner table").addClass("table table-striped table-bordered");
+    $(".highlight table").removeClass("table table-striped table-bordered");
 });
