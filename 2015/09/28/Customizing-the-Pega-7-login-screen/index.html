@@ -7,9 +7,10 @@
     <meta name="author" content="onisuly">
     
     <meta name="description" content="Pega版本：Pega 7.1.6
+
 前言Pega 7默认的登录界面是有Pega公司Logo的这个，而有些时候我们却需要自己定义Pega的登录界面。
 
-默认的登录页面是显示给那些启动了PRPC但却还没有登录的访客的，系统默认分配PRPC:Unauthenticated这个access group给这些">
+默认的登录页面是显示给那些启动了PRPC但却还没有登录的访客的，系统默认分配PRPC:Unauthenticated这个access group给这">
     
     
 
@@ -104,7 +105,9 @@
                 <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现方法"><span class="toc-number">2.</span> <span class="toc-text">实现方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个ruleset"><span class="toc-number">2.1.</span> <span class="toc-text">新建一个ruleset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个access_group"><span class="toc-number">2.2.</span> <span class="toc-text">新建一个access group</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存rule到新的ruleset中"><span class="toc-number">2.3.</span> <span class="toc-text">保存rule到新的ruleset中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新Requestor_Type"><span class="toc-number">2.4.</span> <span class="toc-text">更新Requestor Type</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
             </div>
             
-            <p>Pega版本：Pega 7.1.6</p>
+            <blockquote>
+<p>Pega版本：Pega 7.1.6</p>
+</blockquote>
 <h2 id="前言">前言</h2><p>Pega 7默认的登录界面是有Pega公司Logo的这个，而有些时候我们却需要自己定义Pega的登录界面。</p>
 <p><img src="login-screen.png" alt="login-screen"></p>
 <p>默认的登录页面是显示给那些启动了PRPC但却还没有登录的访客的，系统默认分配PRPC:Unauthenticated这个access group给这些访客。</p>
@@ -120,7 +123,7 @@
 <li>把Unauthenticated:01-01作为Production Ruleset设置给这个新的ruleset并把它添加到你自己当前的access group上（这样你才能向这个新ruleset中保存rule）</li>
 </ol>
 <blockquote>
-<p>注意：当你保存这个access group时会出现一个警告说你创建的这个ruleset没有在application中定义，你可以忽略这个警告。</p>
+<p><strong>注意</strong>：当你保存这个access group时会出现一个警告说你创建的这个ruleset没有在application中定义，你可以忽略这个警告。</p>
 </blockquote>
 <h3 id="保存rule到新的ruleset中">保存rule到新的ruleset中</h3><p>保存下列标准rule的副本到Unauthenticated:01-01-01这个ruleset中（不要更改rule的名字）</p>
 <table>
@@ -153,7 +156,7 @@
 <li>保存这个Requestor Type</li>
 </ol>
 <blockquote>
-<p>注意：一定要确保”Unauthenticated”access group前的单选框是选中的状态，如果没有，选中它再保存一次。</p>
+<p><strong>注意</strong>：一定要确保”Unauthenticated”access group前的单选框是选中的状态，如果没有，选中它再保存一次。</p>
 </blockquote>
 <p>登出后就可以看到效果了</p>
 <p><img src="custom-login-screen.png" alt="custom-login-screen"></p>
