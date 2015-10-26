@@ -9,9 +9,9 @@
     <meta name="description" content="Pega版本：Pega 7.1.8
 
 前言当我们在Pega 7中完成一个应用程序后怎么把应用程序导出来并发给其他人呢？
-操作步骤打开应用导出页面点击左上角DesignerStudio图标，依次选择Application -&amp;gt; Distribution -&amp;gt; Export
+操作步骤打开导出页面点击左上角DesignerStudio图标，依次选择Application -&amp;gt; Distribution -&amp;gt; Package
 
-配置导出参数在">
+配置导出参数在P">
     
     
 
@@ -97,22 +97,26 @@
         <h1>Pega 7如何导出应用程序</h1>
         
         <div class="time-info">
-发表于:<time datetime="2015-10-25T08:47:19.000Z" itemprop="datePublished">2015年10月25日</time>，更新于:<time datetime="2015-10-25T08:47:24.000Z" itemprop="dateModified">2015年10月25日</time>，By <a href="https://onisuly.github.io" title="onisuly">onisuly</a>
+发表于:<time datetime="2015-10-25T08:47:19.000Z" itemprop="datePublished">2015年10月25日</time>，更新于:<time datetime="2015-10-26T12:14:20.000Z" itemprop="dateModified">2015年10月26日</time>，By <a href="https://onisuly.github.io" title="onisuly">onisuly</a>
         </div>
         
         <div class="post-body-inner">
             <div id="toc" class="toc-article well">
                 <strong class="toc-title">大纲</strong>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作步骤"><span class="toc-number">2.</span> <span class="toc-text">操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打开应用导出页面"><span class="toc-number">2.1.</span> <span class="toc-text">打开应用导出页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置导出参数"><span class="toc-number">2.2.</span> <span class="toc-text">配置导出参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#锁定RuleSet"><span class="toc-number">2.3.</span> <span class="toc-text">锁定RuleSet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Product_rule"><span class="toc-number">2.4.</span> <span class="toc-text">设置Product rule</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出应用"><span class="toc-number">2.5.</span> <span class="toc-text">导出应用</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作步骤"><span class="toc-number">2.</span> <span class="toc-text">操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打开导出页面"><span class="toc-number">2.1.</span> <span class="toc-text">打开导出页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置导出参数"><span class="toc-number">2.2.</span> <span class="toc-text">配置导出参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#锁定RuleSet"><span class="toc-number">2.3.</span> <span class="toc-text">锁定RuleSet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Product_rule"><span class="toc-number">2.4.</span> <span class="toc-text">设置Product rule</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出应用"><span class="toc-number">2.5.</span> <span class="toc-text">导出应用</span></a></li></ol></li></ol>
             </div>
             
             <blockquote>
 <p>Pega版本：Pega 7.1.8</p>
 </blockquote>
 <h2 id="前言">前言</h2><p>当我们在Pega 7中完成一个应用程序后怎么把应用程序导出来并发给其他人呢？</p>
-<h2 id="操作步骤">操作步骤</h2><h3 id="打开应用导出页面">打开应用导出页面</h3><p>点击左上角DesignerStudio图标，依次选择Application -&gt; Distribution -&gt; Export</p>
-<p><img src="application-export-menu.png" alt="application-export-menu"></p>
-<h3 id="配置导出参数">配置导出参数</h3><p>在导出模式中选择Product</p>
+<h2 id="操作步骤">操作步骤</h2><h3 id="打开导出页面">打开导出页面</h3><p>点击左上角DesignerStudio图标，依次选择Application -&gt; Distribution -&gt; Package</p>
+<p><img src="application-package-menu.png" alt="application-package-menu"></p>
+<h3 id="配置导出参数">配置导出参数</h3><p>在Package标签配置好你要导出的Application，Ruleset Name和RuleSet version</p>
+<p><img src="package-preference.png" alt="package-preference"></p>
+<p>一路点击Next，直到遇到如下画面</p>
+<p><img src="package-final.png" alt="package-final"></p>
+<p>然后切换到Export标签在导出模式中选择Product</p>
 <p><img src="export-preference-export-mode.png" alt="export-preference-export-mode"></p>
 <p>在产品列表中选择我们自己建的应用</p>
 <p><img src="export-preference-product.png" alt="export-preference-product"></p>
