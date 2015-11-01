@@ -96,13 +96,13 @@
         <h1>在Pega 7中使用自定义字体</h1>
         
         <div class="time-info">
-发表于:<time datetime="2015-10-31T05:48:45.000Z" itemprop="datePublished">2015年10月31日</time>，更新于:<time datetime="2015-10-31T05:48:50.000Z" itemprop="dateModified">2015年10月31日</time>，By <a href="https://onisuly.github.io" title="onisuly">onisuly</a>
+发表于:<time datetime="2015-10-31T05:48:45.000Z" itemprop="datePublished">2015年10月31日</time>，更新于:<time datetime="2015-11-01T03:27:00.000Z" itemprop="dateModified">2015年11月01日</time>，By <a href="https://onisuly.github.io" title="onisuly">onisuly</a>
         </div>
         
         <div class="post-body-inner">
             <div id="toc" class="toc-article well">
                 <strong class="toc-title">大纲</strong>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现方法"><span class="toc-number">2.</span> <span class="toc-text">实现方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取WebFont字体"><span class="toc-number">2.1.</span> <span class="toc-text">获取WebFont字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传字体到Pega_7"><span class="toc-number">2.2.</span> <span class="toc-text">上传字体到Pega 7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传CSS样式文件"><span class="toc-number">2.3.</span> <span class="toc-text">上传CSS样式文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Application_Skin"><span class="toc-number">2.4.</span> <span class="toc-text">配置Application Skin</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字体图标"><span class="toc-number">3.</span> <span class="toc-text">字体图标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现方法"><span class="toc-number">2.</span> <span class="toc-text">实现方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取WebFont字体"><span class="toc-number">2.1.</span> <span class="toc-text">获取WebFont字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传字体到Pega_7"><span class="toc-number">2.2.</span> <span class="toc-text">上传字体到Pega 7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传CSS样式文件"><span class="toc-number">2.3.</span> <span class="toc-text">上传CSS样式文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Application_Skin"><span class="toc-number">2.4.</span> <span class="toc-text">配置Application Skin</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附：字体图标"><span class="toc-number">4.</span> <span class="toc-text">附：字体图标</span></a></li></ol>
             </div>
             
             <blockquote>
@@ -146,16 +146,17 @@
 <p><img src="overall-font.png" alt="overall-font"></p>
 <p>保存Skin Rule后新建一个Case就能看到效果了</p>
 <p><img src="create-new-case.png" alt="create-new-case"></p>
-<h2 id="字体图标">字体图标</h2><p>使用Webfont并不是仅仅能改变界面的字体这么简单，你还可以把WebFont当做图标来使用。</p>
+<h2 id="参考资料">参考资料</h2><ul>
+<li><a href="https://pdn.pega.com/pegatube/using-custom-webfonts-in-your-pega-7-application" title="Using custom webfonts in your Pega 7 application" target="_blank" rel="external">PDN: Using custom webfonts in your Pega 7 application</a></li>
+</ul>
+<hr>
+<h2 id="附：字体图标">附：字体图标</h2><p>使用Webfont并不是仅仅能改变界面的字体这么简单，你还可以把WebFont当做图标来使用。</p>
 <p>这里以 <a href="FontAwesome.zip">FontAwesome</a> 为例</p>
 <p>用法和更改字体时基本一致，只不过不需要在Application Skin的Mixins标签中设置Overall font了，毕竟我们不是要更改页面的字体。</p>
 <p>在Section上拖拽一个Icon/Image Control，然后将Icon source设置为Icon Class，Class中填写相应的类即可，这里以fa fa-firefox fa-3x为例（具体用法可以参考 <a href="http://fontawesome.io/" title="Font Awesome官网" target="_blank" rel="external">Font Awesome官网</a>）</p>
 <p><img src="icon-image.png" alt="icon-image"></p>
 <p>看下最后的效果吧</p>
 <p><img src="view-icon.png" alt="view-icon"></p>
-<h2 id="参考资料">参考资料</h2><ul>
-<li><a href="https://pdn.pega.com/pegatube/using-custom-webfonts-in-your-pega-7-application" title="Using custom webfonts in your Pega 7 application" target="_blank" rel="external">PDN: Using custom webfonts in your Pega 7 application</a></li>
-</ul>
 
 
 			

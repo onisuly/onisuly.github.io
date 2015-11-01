@@ -97,13 +97,13 @@
         <h1>Pega 7如何导出应用程序</h1>
         
         <div class="time-info">
-发表于:<time datetime="2015-10-25T08:47:19.000Z" itemprop="datePublished">2015年10月25日</time>，更新于:<time datetime="2015-10-26T12:14:20.000Z" itemprop="dateModified">2015年10月26日</time>，By <a href="https://onisuly.github.io" title="onisuly">onisuly</a>
+发表于:<time datetime="2015-10-25T08:47:19.000Z" itemprop="datePublished">2015年10月25日</time>，更新于:<time datetime="2015-11-01T03:27:37.000Z" itemprop="dateModified">2015年11月01日</time>，By <a href="https://onisuly.github.io" title="onisuly">onisuly</a>
         </div>
         
         <div class="post-body-inner">
             <div id="toc" class="toc-article well">
                 <strong class="toc-title">大纲</strong>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作步骤"><span class="toc-number">2.</span> <span class="toc-text">操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打开导出页面"><span class="toc-number">2.1.</span> <span class="toc-text">打开导出页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置导出参数"><span class="toc-number">2.2.</span> <span class="toc-text">配置导出参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#锁定RuleSet"><span class="toc-number">2.3.</span> <span class="toc-text">锁定RuleSet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Product_rule"><span class="toc-number">2.4.</span> <span class="toc-text">设置Product rule</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出应用"><span class="toc-number">2.5.</span> <span class="toc-text">导出应用</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作步骤"><span class="toc-number">2.</span> <span class="toc-text">操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打开导出页面"><span class="toc-number">2.1.</span> <span class="toc-text">打开导出页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置导出参数"><span class="toc-number">2.2.</span> <span class="toc-text">配置导出参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#锁定RuleSet"><span class="toc-number">2.3.</span> <span class="toc-text">锁定RuleSet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Product_rule"><span class="toc-number">2.4.</span> <span class="toc-text">设置Product rule</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出应用"><span class="toc-number">2.5.</span> <span class="toc-text">导出应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附：导出单条Rule"><span class="toc-number">3.</span> <span class="toc-text">附：导出单条Rule</span></a></li></ol>
             </div>
             
             <blockquote>
@@ -139,6 +139,16 @@
 <h3 id="导出应用">导出应用</h3><p>设置完成后就可以导出应用了</p>
 <p>点击“执行导出”按钮，耐心等待，导出完成后会出现一个链接，右键另存为即可保存导出的应用到本地</p>
 <p><img src="export-product.png" alt="export-product"></p>
+<hr>
+<h2 id="附：导出单条Rule">附：导出单条Rule</h2><p>前面我们实现了整个应用的导出，但如果我们只想导出一条或几条Rule时该怎么办呢？</p>
+<p>其实我们在<a href="#配置导出参数">配置导出参数</a>的第一步，在Package标签中一路点击Next到最后时，Pega 7自动为我们生成了一条Product Rule。我们在<a href="#设置Product_rule">设置Product rule</a>时仅仅是设置其允许导出未锁定版本的RuleSet，其实我们可以做的更多。</p>
+<p>在我们想导出的Rule的右上角，点击Action按钮并选择View XML</p>
+<p><img src="view-xml.png" alt="view-xml"></p>
+<p>然后搜索pzInsKey</p>
+<p><img src="search-pzinskey.png" alt="search-pzinskey"></p>
+<p>然后我们新建一个Product的Rule，把pzInsKey里面的内容填到Individual instances to include区域的Key下，Label下的内容可以随便填</p>
+<p><img src="individual-instances.png" alt="individual-instances"></p>
+<p>保存Product Rule后点击最下面的Create product file按钮即可导出单条Rule了</p>
 
 
 			
