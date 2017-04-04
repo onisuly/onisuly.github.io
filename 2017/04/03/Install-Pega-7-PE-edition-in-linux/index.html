@@ -97,13 +97,13 @@
         <h1>在Linux下安装Pega7 PE版</h1>
         
         <div class="time-info">
-发表于:<time datetime="2017-04-03T12:21:29.000Z" itemprop="datePublished">2017年04月03日</time>，更新于:<time datetime="2017-04-03T12:21:34.000Z" itemprop="dateModified">2017年04月03日</time>，By <a href="https://onisuly.github.io" title="onisuly">onisuly</a>
+发表于:<time datetime="2017-04-03T12:21:29.000Z" itemprop="datePublished">2017年04月03日</time>，更新于:<time datetime="2017-04-04T03:42:29.000Z" itemprop="dateModified">2017年04月04日</time>，By <a href="https://onisuly.github.io" title="onisuly">onisuly</a>
         </div>
         
         <div class="post-body-inner">
             <div id="toc" class="toc-article well">
                 <strong class="toc-title">大纲</strong>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number">2.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载Pega7_PE版"><span class="toc-number">2.1.</span> <span class="toc-text">下载Pega7 PE版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装PostgreSQL数据库"><span class="toc-number">2.2.</span> <span class="toc-text">安装PostgreSQL数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入Pega数据"><span class="toc-number">2.3.</span> <span class="toc-text">导入Pega数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Tomcat"><span class="toc-number">2.4.</span> <span class="toc-text">配置Tomcat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动Pega7"><span class="toc-number">2.5.</span> <span class="toc-text">启动Pega7</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number">2.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载Pega7_PE版"><span class="toc-number">2.1.</span> <span class="toc-text">下载Pega7 PE版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装PostgreSQL数据库"><span class="toc-number">2.2.</span> <span class="toc-text">安装PostgreSQL数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入Pega数据"><span class="toc-number">2.3.</span> <span class="toc-text">导入Pega数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Tomcat"><span class="toc-number">2.4.</span> <span class="toc-text">配置Tomcat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动Pega7"><span class="toc-number">2.5.</span> <span class="toc-text">启动Pega7</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
             </div>
             
             <blockquote>
@@ -122,7 +122,7 @@
 <p>找到data目录下的两个数据库dump文件</p>
 <p><img src="database-dump-file.png" alt="database-dump-file"></p>
 <p>恢复Pega dump文件到数据库（用户名和密码都是pega），这一步的等待时间会很长<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pg_restore -U pega -h 127.0.0.1 -d pega sqlj.dump</span><br><span class="line">pg_restore -U pega -h 127.0.0.1 -d pega pega.dump</span><br></pre></td></tr></table></figure></p>
-<h3 id="配置Tomcat">配置Tomcat</h3><p>在上一步的解压后，继续解压PRPC_PE.jar，再解压PersonalEdition.zip，这样我们就的到了tomcat，但现在的tomcat是不能用的，需要再配置一下</p>
+<h3 id="配置Tomcat">配置Tomcat</h3><p>在上一步的解压后，继续解压PRPC_PE.jar，再解压PersonalEdition.zip，这样我们就得到了tomcat，但现在的tomcat是不能用的，需要再配置一下</p>
 <p><img src="tomcat-configuration.png" alt="tomcat-configuration"></p>
 <p>创建一个Pega目录，把刚才得到的tomcat复制过来，再创建一个temp目录</p>
 <p><img src="create-pega-directory.png" alt="create-pega-directory"></p>
@@ -137,6 +137,10 @@
 <p><img src="start-tomcat.png" alt="start-tomcat"></p>
 <p>然后等待Pega7启动好就可以使用了</p>
 <p><img src="run-pega7.png" alt="run-pega7"></p>
+<h2 id="参考资料">参考资料</h2><ul>
+<li><a href="https://www.postgresql.org/docs/9.3/static/app-pgdump.html" title="PostgreSQL: Documentation: 9.3: pg_dump" target="_blank" rel="external">PostgreSQL: Documentation: 9.3: pg_dump</a></li>
+<li><a href="https://www.postgresql.org/docs/9.3/static/app-pgrestore.html" title="PostgreSQL: Documentation: 9.3: pg_restore" target="_blank" rel="external">PostgreSQL: Documentation: 9.3: pg_restore</a></li>
+</ul>
 
 
 			
