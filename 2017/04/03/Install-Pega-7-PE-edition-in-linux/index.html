@@ -6,12 +6,11 @@
     
     <meta name="author" content="onisuly">
     
-    <meta name="description" content="Pega版本：Pega 7.1.9
+    <meta name="description" content="Pega版本：Pega 7.1.9, Pega 7.2.2
 
 前言我们可以从Pega PDN上下载PE版本供日常练习使用，但是Pega7的PE版默认只提供了Windows的安装向导，若要在Linux下使用就要自己手动安装了。
 安装步骤下载Pega7 PE版
-登录PDN后可以申请下载Pega7 PE版。
-安装JDK从Orac">
+登录PDN后可以申请下载Pega7 PE版">
     
     
 
@@ -97,23 +96,23 @@
         <h1>在Linux下安装Pega7 PE版</h1>
         
         <div class="time-info">
-发表于:<time datetime="2017-04-03T12:21:29.000Z" itemprop="datePublished">2017年04月03日</time>，更新于:<time datetime="2017-12-22T12:05:48.000Z" itemprop="dateModified">2017年12月22日</time>，By <a href="https://onisuly.github.io" title="onisuly">onisuly</a>
+发表于:<time datetime="2017-04-03T12:21:29.000Z" itemprop="datePublished">2017年04月03日</time>，更新于:<time datetime="2017-12-22T13:22:51.000Z" itemprop="dateModified">2017年12月22日</time>，By <a href="https://onisuly.github.io" title="onisuly">onisuly</a>
         </div>
         
         <div class="post-body-inner">
             <div id="toc" class="toc-article well">
                 <strong class="toc-title">大纲</strong>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number">2.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载Pega7_PE版"><span class="toc-number">2.1.</span> <span class="toc-text">下载Pega7 PE版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装JDK"><span class="toc-number">2.2.</span> <span class="toc-text">安装JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装PostgreSQL数据库"><span class="toc-number">2.3.</span> <span class="toc-text">安装PostgreSQL数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入Pega数据"><span class="toc-number">2.4.</span> <span class="toc-text">导入Pega数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Tomcat"><span class="toc-number">2.5.</span> <span class="toc-text">配置Tomcat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动Pega7"><span class="toc-number">2.6.</span> <span class="toc-text">启动Pega7</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number">2.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载Pega7_PE版"><span class="toc-number">2.1.</span> <span class="toc-text">下载Pega7 PE版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装JDK"><span class="toc-number">2.2.</span> <span class="toc-text">安装JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装PostgreSQL数据库（Pega7-1）"><span class="toc-number">2.3.</span> <span class="toc-text">安装PostgreSQL数据库（Pega7.1）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入Pega数据（Pega7-1）"><span class="toc-number">2.4.</span> <span class="toc-text">导入Pega数据（Pega7.1）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装PostgreSQL数据库和导入数据（Pega7-2）"><span class="toc-number">2.5.</span> <span class="toc-text">安装PostgreSQL数据库和导入数据（Pega7.2）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Tomcat"><span class="toc-number">2.6.</span> <span class="toc-text">配置Tomcat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动Pega7"><span class="toc-number">2.7.</span> <span class="toc-text">启动Pega7</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
             </div>
             
             <blockquote>
-<p>Pega版本：Pega 7.1.9</p>
+<p>Pega版本：Pega 7.1.9, Pega 7.2.2</p>
 </blockquote>
 <h2 id="前言">前言</h2><p>我们可以从Pega PDN上下载PE版本供日常练习使用，但是Pega7的PE版默认只提供了Windows的安装向导，若要在Linux下使用就要自己手动安装了。</p>
 <h2 id="安装步骤">安装步骤</h2><h3 id="下载Pega7_PE版">下载Pega7 PE版</h3><p><img src="pdn-download-pe-edition.png" alt="pdn-download-pe-edition"></p>
 <p>登录PDN后可以申请下载Pega7 PE版。</p>
 <h3 id="安装JDK">安装JDK</h3><p>从Oracle官网下载JDK后解压到Software/jdk，把java配置到path中<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=&#34;$HOME/Software/jdk&#34;&#10;PATH=&#34;$JAVA_HOME/bin:$PATH&#34;</span><br></pre></td></tr></table></figure></p>
-<h3 id="安装PostgreSQL数据库">安装PostgreSQL数据库</h3><p>这里以Ubuntu为例，安装PostgreSQL数据库和pgadmin3<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install postgresql pgadmin3</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装PostgreSQL数据库（Pega7-1）">安装PostgreSQL数据库（Pega7.1）</h3><p>这里以Ubuntu为例，安装PostgreSQL数据库和pgadmin3<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install postgresql pgadmin3</span><br></pre></td></tr></table></figure></p>
 <p>安装好后打开pgadmin3，创建一个新role——pega，权限给满</p>
 <p><img src="create-new-role.png" alt="create-new-role"><br><img src="create-new-role-privilege.png" alt="create-new-role-privilege"></p>
 <p>分别运行这3条语句<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">USER</span> pega <span class="keyword">PASSWORD</span> <span class="string">'pega'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> pega <span class="keyword">WITH</span> OWNER pega <span class="keyword">TEMPLATE</span> template0 <span class="keyword">ENCODING</span> <span class="string">'UTF8'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">USER</span> pega <span class="keyword">SET</span> SEARCH_PATH <span class="keyword">to</span> <span class="string">"$user"</span>,personaledition,<span class="keyword">public</span>;</span></span><br></pre></td></tr></table></figure></p>
@@ -124,16 +123,33 @@
 <p>执行上面的语句<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\q</span><br></pre></td></tr></table></figure></p>
 <p>退出数据库</p>
 </blockquote>
-<h3 id="导入Pega数据">导入Pega数据</h3><p>找到第一步中下载到的Pega7 PE版，解压</p>
+<h3 id="导入Pega数据（Pega7-1）">导入Pega数据（Pega7.1）</h3><p>找到第一步中下载到的Pega7 PE版，解压</p>
 <p><img src="pega7-pe-edition.png" alt="pega7-pe-edition"></p>
 <p>找到data目录下的两个数据库dump文件</p>
 <p><img src="database-dump-file.png" alt="database-dump-file"></p>
 <p>恢复Pega dump文件到数据库（用户名和密码都是pega），这一步的等待时间会很长<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pg_restore -U pega -h 127.0.0.1 -d pega sqlj.dump</span><br><span class="line">pg_restore -U pega -h 127.0.0.1 -d pega pega.dump</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装PostgreSQL数据库和导入数据（Pega7-2）">安装PostgreSQL数据库和导入数据（Pega7.2）</h3><p>这里以Ubuntu为例，安装PostgreSQL数据库和pgadmin3<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install postgresql pgadmin3</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>登录PostgreSQL数据库<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -u postgres psql</span><br></pre></td></tr></table></figure></p>
+<p>执行<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">USER</span> postgres <span class="keyword">PASSWORD</span> <span class="string">'postgres'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">USER</span> postgres <span class="keyword">SET</span> SEARCH_PATH <span class="keyword">to</span> <span class="string">"$user"</span>,postgres,<span class="keyword">public</span>;</span></span><br></pre></td></tr></table></figure></p>
+<p>退出数据库<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\q</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>找到第一步中下载到的Pega7 PE版，解压</p>
+<p><img src="pega7-pe-edition.png" alt="pega7-pe-edition"></p>
+<p>找到data目录下的两个数据库dump文件</p>
+<p><img src="database-dump-file.png" alt="database-dump-file"></p>
+<p>恢复Pega dump文件到数据库<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pg_restore -U postgres -h 127.0.0.1 -d postgres sqlj.dump</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>登录PostgreSQL数据库<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -u postgres psql</span><br></pre></td></tr></table></figure></p>
+<p>执行<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">UPDATE</span> sqlj.classpath_entry <span class="keyword">SET</span> schemaname=<span class="string">'public'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="operator"><span class="keyword">UPDATE</span> sqlj.jar_repository <span class="keyword">SET</span> jarowner=<span class="string">'public'</span>;</span></span><br></pre></td></tr></table></figure></p>
+<p>退出数据库<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\q</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>恢复第二个Pega dump文件到数据库<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pg_restore -U postgres -h 127.0.0.1 -d postgres pega.dump</span><br></pre></td></tr></table></figure></p>
 <h3 id="配置Tomcat">配置Tomcat</h3><p>在上一步的解压后，继续解压PRPC_PE.jar，再解压PersonalEdition.zip，这样我们就得到了tomcat，但现在的tomcat是不能用的，需要再配置一下</p>
 <p><img src="tomcat-configuration.png" alt="tomcat-configuration"></p>
 <p>创建一个Pega目录，把刚才得到的tomcat复制过来，再创建一个temp目录</p>
 <p><img src="create-pega-directory.png" alt="create-pega-directory"></p>
-<p>进入tomcat的bin目录，把所以shell脚本加上运行权限<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x *.sh</span><br></pre></td></tr></table></figure></p>
+<p>进入tomcat的bin目录，把所有shell脚本加上运行权限<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x *.sh</span><br></pre></td></tr></table></figure></p>
 <p>再进入conf目录，修改配置文件</p>
 <p><code>context.xml</code><br>搜索@PG_PORT，把其替换成你PostgreSQL数据库的端口，默认是5432<br>搜索@TEMP_DIR，把其替换成你刚才创建的temp目录</p>
 <p><img src="context-configuration.png" alt="context-configuration"></p>
